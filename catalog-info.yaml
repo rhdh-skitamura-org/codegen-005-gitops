@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: codegen-005-gitops
+  description: This is GitOps manifest for codegen-005   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: codegen-005
+    janus-idp.io/tekton: codegen-005 
+    backstage.io/kubernetes-id: codegen-005 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:default/skitamura7446 
+  lifecycle: experimental
+  dependsOn:
+    - component:codegen-005
